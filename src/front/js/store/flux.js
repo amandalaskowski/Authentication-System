@@ -21,17 +21,27 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			changeColor: (index, color) => {},
 
+			logout: () => {
+				setStore({ authToken: null });
+			},
+
 			loginUser: (email, password) => {
 				fetch(process.env.BACKEND_URL + "/api/login", {
 					method: "POST",
-					data: JSON.stringify({ email, password }),
+					body: JSON.stringify({ email, password }),
 					headers: {
-						"Content-Type": "application, json"
+						"Content-Type": "application/json"
 					}
 				})
-					.then(resp => resp.json())
+					.then(resp => {
+						if (resp.status !== 200) {
+							throw new Error(rest.data);
+						}
+
+						return resp.json();
+					})
 					.then(data => setStore({ authToken: data.token, authError: null }))
-					.catch(error => setStore({ authToken: null, authError: null }));
+					.catch(error => setStore({ authToken: null, authError: error }));
 			}
 		}
 	};
