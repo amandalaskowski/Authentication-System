@@ -12,6 +12,15 @@ export const Home = () => {
 			<p>
 				<img src={rigoImageUrl} />
 			</p>
+			<div>
+				<a type="button" className="btn btn-primary" href="/register">
+					Register Here!
+				</a>
+
+				<a type="button" className="btn btn-primary" href="/login">
+					Already a user? Login Here!
+				</a>
+			</div>
 			<div className="alert alert-info">{store.message || "Loading message from the backend..."}</div>
 			<p>
 				This boilerplate comes with lots of documentation:{" "}

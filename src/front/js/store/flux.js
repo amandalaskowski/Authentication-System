@@ -42,6 +42,25 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(data => setStore({ authToken: data.token, authError: null }))
 					.catch(error => setStore({ authToken: null, authError: error }));
+			},
+
+			registerUser: (email, password) => {
+				fetch(process.env.BACKEND_URL + "/api/register", {
+					method: "POST",
+					body: JSON.stringify({ email, password }),
+					headers: {
+						"Content-Type": "application/json"
+					}
+				})
+					.then(resp => {
+						if (resp.status !== 200) {
+							throw new Error(rest.data);
+						}
+
+						return resp.json();
+					})
+					.then(data => setStore({ authToken: data.token, authError: null }))
+					.catch(error => setStore({ authToken: null, authError: error }));
 			}
 		}
 	};
