@@ -39,9 +39,9 @@ export function RegisterUser() {
 					placeholder="Password"
 				/>
 			</div>
-			<a className="btn btn-primary" onClick={() => actions.registerUser(email, password)} href="/login">
+			<button className="btn btn-primary" onClick={() => actions.registerUser(email, password)}>
 				Register
-			</a>
+			</button>
 		</div>
 	);
 }
