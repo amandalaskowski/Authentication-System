@@ -1,9 +1,12 @@
-/* 
-    General Styles
-*/
 
-.btn{
-    margin-top: 25px;
-    margin-bottom: 25px;
-    margin-left: 20px;
+
+.homecontainer{
+    background-image: url("https://www.teahub.io/photos/full/194-1942328_nice-picture-of-the-ocean.jpg");
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    font-family: 'Kaisei HarunoUmi', serif;
+}
+
+.navbar{
+    font-family: 'Kaisei HarunoUmi', serif;
 }

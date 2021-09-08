@@ -7,27 +7,15 @@ export const Home = () => {
 	const { store, actions } = useContext(Context);
 
 	return (
-		<div className="text-center mt-5">
-			<h1>Hello Rigo!</h1>
-			<p>
-				<img src={rigoImageUrl} />
-			</p>
-			<div>
-				<a type="button" className="btn btn-primary" href="/register">
-					Register Here!
-				</a>
-
-				<a type="button" className="btn btn-primary" href="/login">
-					Already a user? Login Here!
-				</a>
-			</div>
-			<div className="alert alert-info">{store.message || "Loading message from the backend..."}</div>
-			<p>
-				This boilerplate comes with lots of documentation:{" "}
-				<a href="https://github.com/4GeeksAcademy/react-flask-hello/tree/95e0540bd1422249c3004f149825285118594325/docs">
-					Read documentation
-				</a>
-			</p>
+		<div className="homecontainer container-fluid w-100 h-100 d-flex align-items-center justify-content-center">
+			<h1 className="display-2">Keeping You Connected</h1>
+			<footer className="footer mt-auto py-2 bg-light fixed-bottom">
+				<div className="container d-flex justify-content-center fixed-bottom mb-5">
+					<a type="button" href="/login" className="btn btn-light">
+						Learn More about Mynd Connect Here
+					</a>
+				</div>
+			</footer>
 		</div>
 	);
 };
